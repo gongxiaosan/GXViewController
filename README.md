@@ -11,7 +11,7 @@ initial
 
   let vc = GXViewController(subControllers: vcs)
   
-set colors
+Set colors
 
   vc.normalColor = the color you want // is a default color,default is blue
   

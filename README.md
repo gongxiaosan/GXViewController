@@ -1,18 +1,16 @@
 # GXViewController
-swift 仿网易新闻控件 scrollView
+Swift 仿网易新闻控件 ScrollView
 
-Use GXViewController(subControllers: vcs)  to  initialize controller
-
-Every subController must have it's name to show as head title
+Use GXViewController(subControllers: vcs)  to  initialize controller ，Every subController must have it's name to show as head title
 
 Follow are examples :
 
 initial
 
-  let vc = GXViewController(subControllers: vcs)
+     let vc = GXViewController(subControllers: vcs)
   
 Set colors
 
-  vc.normalColor = the color you want // is a default color,default is blue
+     vc.normalColor = the color you want // is a default color,default is blue
   
-  vc.highlitedColor = the color you selected // deafault is red
+     vc.highlitedColor = the color you selected // deafault is red

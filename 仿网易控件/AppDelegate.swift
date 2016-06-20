@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         self.window?.rootViewController = UINavigationController(rootViewController: GXViewController(subControllers: vcs))
-        
         self.window?.makeKeyAndVisible()
         return true
     }

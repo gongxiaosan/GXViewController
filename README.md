@@ -15,4 +15,4 @@ Set colors
   
      vc.highlitedColor = the color you selected // deafault is red
 
-                         ![image](https://github.com/gongxiaosan/GXViewController/blob/master/screen.png)
+![image](https://github.com/gongxiaosan/GXViewController/blob/master/screen.png)

@@ -14,3 +14,5 @@ Set colors
      vc.normalColor = the color you want // is a default color,default is blue
   
      vc.highlitedColor = the color you selected // deafault is red
+
+ ![image](https://github.com/gongxiaosan/GXViewController/blob/master/screen.png)

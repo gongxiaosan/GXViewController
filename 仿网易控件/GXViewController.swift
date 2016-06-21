@@ -75,7 +75,6 @@ extension GXViewController: UIScrollViewDelegate{
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
         let width = scrollView.frame.size.width
         let index = scrollView.contentOffset.x/width
-        print(index)
         let label = headScrollView.subviews[NSInteger(index)] as! UILabel
         var offSet = label.center.x - width/2
         if label.center.x - width/2 < 0 {

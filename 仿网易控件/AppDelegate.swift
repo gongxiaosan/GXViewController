@@ -25,8 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             vc.title = v
             vcs.append(vc)
         }
-
+        
         self.window?.rootViewController = UINavigationController(rootViewController: GXViewController(subControllers: vcs))
+        self.window?.rootViewController?.title = "仿网易新闻客户端"
         self.window?.makeKeyAndVisible()
         return true
     }

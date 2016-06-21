@@ -5,7 +5,7 @@ Use GXViewController(subControllers: vcs)  to  initialize controller ，Every su
 
 Follow are examples :
 
-initial
+Initial
 
      let vc = GXViewController(subControllers: vcs)
   

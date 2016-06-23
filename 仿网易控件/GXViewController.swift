@@ -50,7 +50,6 @@ class GXViewController: UIViewController {
         view.addSubview(headScrollView)
         view.addSubview(bodyScrollView)
         for i in 0...self.childViewControllers.count - 1{
-//            let label = GLabel(frame: CGRectMake(CGFloat(i) * labelWidth ,0, labelWidth, headScrollHeight))
             let label = GLabel(frame: CGRectMake(CGFloat(i) * labelWidth ,0, labelWidth, headScrollHeight), normalColor: normalColor, highlitedColor: highlitedColor)
             label.text = self.childViewControllers[i].title
             label.tag = i
@@ -83,17 +82,29 @@ extension GXViewController: UIScrollViewDelegate{
             offSet = labelWidth * CGFloat(self.childViewControllers.count) - width
         }
         self.headScrollView.setContentOffset(CGPointMake(offSet ,0), animated: true)
-        
+        print(headScrollView.subviews)
+        for v in headScrollView.subviews {
+            if v.isMemberOfClass(GLabel)  {
+                if v != label {
+                    ( v as! GLabel).gScale = 0
+                    
+                }
+            }
+            
+        }
         let vc = self.childViewControllers[NSInteger(index)]
         if vc.isViewLoaded() {
             return
         }
         vc.view.frame = CGRectMake(scrollView.contentOffset.x, 0, width, scrollView.frame.size.height)
         scrollView.addSubview(vc.view)
-        
+        self.scrollViewDidScroll(scrollView)
     }
     func scrollViewDidScroll(scrollView: UIScrollView) {
         let scale = scrollView.contentOffset.x/UIScreen.mainScreen().bounds.size.width
+        if scale < 0 || scale > CGFloat(self.childViewControllers.count - 1){
+            return
+        }
         let  leftIndex = NSInteger(scale)
         let leftLabel = headScrollView.subviews[leftIndex] as! GLabel
         let rightScale = scale - CGFloat(leftIndex)
